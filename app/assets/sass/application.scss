@@ -33,12 +33,16 @@ $path: "/public/images/";
   font-weight: bold;
 }
 .journeybox {
-  background-image:url();
-  background-repeat:no-repeat;
-  background-position: top left;
+  background-image:url(/public/images/stages_dots.png)
+  // background-repeat:no-repeat;
+  // background-position: top left;
   p {
     margin-top: 30px;
   }
+}
+.alert-default {
+  border-color: $light-blue;
+  background-color: mix(white, $light-blue, 90%);
 }
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
