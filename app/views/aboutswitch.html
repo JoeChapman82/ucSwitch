@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+About - GOV.UK Prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <form action="/aboutswitch.html" method="get" class="form">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">You’ll need to switch to Universal Credit in March 2018</h1>
+      <p class="lede">
+
+      </p>
+      <h3 class="heading-medium">What you need to do to get ready</h3>
+      <ul class="list list-bullet">
+      <li>Make sure you can get access to the internet, either at home or at a local
+        library or friend’s house - Universal Credit is all done online. If you're not
+        that confident using a computer or the internet, contact your local library
+        to find out about courses to help improve your skills</li>
+        <li>Set up an email account if you don’t have one already</li>
+      <li>Set up a bank or building society account to make payments from. If you have a partner,
+        you might want to set up a joint account with them as you’ll get 1 monthly payment
+        between the two of you</li>
+      <li>When you're working out your bills don’t forget your rent, including if you’re
+        renting your home off a housing association that’s paid for by housing benefit.</li>
+      <li>If you’d like extra help working out your budgets go to [online budgeting tool]</li>
+      <li>Get yourself verified using <a href="http://www.GOV.UK/Verify">GOV.UK Verify</a>. This will save you having to go
+        to the job centre with your identification.</li>
+      </ul>
+
+      <h3 class="heading-medium">What might change when you move to UC</h3>
+      <ul class="list list-bullet">
+        <!-- List dot one and two -->
+        {% if (benefit_JSA or benefit_ESA or benefit_IS or benefit_HB) %}
+          {% include "includes/responsibilities/1.html" %}
+          {% include "includes/responsibilities/2.html" %}
+          {% include "includes/responsibilities/3.html" %}
+        {% endif %}
+
+        <!-- List dot four -->
+        {% if (benefit_WTC or benefit_CTC or benefit_JSA or benefit_ESA or benefit_IS or benefit_HB) %}
+        {% include "includes/responsibilities/4.html" %}
+        {% endif %}
+        <!-- List dot five -->
+        {% if (benefit_JSA or benefit_ESA or benefit_IS or benefit_HB) %}
+        {% include "includes/responsibilities/5.html" %}
+        {% endif %}
+        <!-- List dot six -->
+        {% if (benefit_WTC or benefit_CTC or benefit_JSA or benefit_ESA or benefit_IS or benefit_HB) %}
+        {% include "includes/responsibilities/6.html" %}
+        {% endif %}
+        <!-- List dot seven -->
+        {% if (benefit_WTC or benefit_CTC or benefit_JSA or benefit_ESA or benefit_IS or benefit_HB) %}
+        {% include "includes/responsibilities/7.html" %}
+        {% endif %}
+    </ul>
+    </div>
+</form>
+
+</main>
+
+{% endblock %}

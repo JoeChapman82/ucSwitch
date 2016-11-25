@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+About - GOV.UK Prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <form action="/whichbenefits.html" method="get" class="form">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-large"></h2>
+
+      <div class="form-group">
+        <p class="lede">
+        Enter the first part of your postcode so we can tell you when your area
+        will be switching to Universal Credit.
+          </p>
+        <p class="form-hint">eg LS1 or YO26</p>
+        <input type="text" class="form-control form-control-1-8" id="postcode">
+      </div>
+
+      <div class="form-group">
+        <input type="submit" class="button" value="Continue">
+      </div>
+    </div>
+  </div>
+</form>
+
+</main>
+
+{% endblock %}

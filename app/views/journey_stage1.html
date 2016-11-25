@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+About - GOV.UK Prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <form action="/aboutswitch.html" method="get" class="form">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Switching to Universal Credit</h1>
+      <p class="lede">
+
+      </p>
+      <h3 class="heading-medium">Here’s a checklist of things you can do to get
+        ready for when it’s time for you to apply for Universal Credit.</h3>
+        <div class="form-group">
+          <fieldset>
+              <legend class="visuallyhidden">Checklist</legend>
+            <label for="findoutmore" class="block-label">
+              <input type="checkbox" name="findoutmore" value="fom" id="findoutmore">
+              Find out more about what being on Universal Credit means for you and
+              your family at <a href="http://www.GOV.UK/universal-credit">GOV.UK/universal-credit.</a>
+            </label>
+            <label for="bankaccount" class="block-label">
+              <input type="checkbox" name="bankaccount" value="ba" id="bankaccount">
+              If you don’t have one already, set up a bank account in your name
+              that you have full control over
+            </label>
+            <label for="email" class="block-label">
+              <input type="checkbox" name="emailaccount" value="ea" id="emailaccount">
+              Make sure you have a personal email account that only you can access.
+            </label>
+            <label for="housingbenefit" class="block-label">
+              <input type="checkbox" name="housingbenefit" value="hb" id="housingbenefit">
+              If you’re getting Housing Benefit at the moment, arrange with your
+              landlord to start paying your own rent when you’ve switched to Universal Credit.
+            </label>
+            <label for="help" class="block-label">
+              <input type="checkbox" name="help" value="h" id="help">
+              Find out what help you can get to apply for Universal Credit.
+            </label>
+            </fieldset>
+        </div>
+    </div>
+    <div class="column-third">
+
+      <p style="margin-top:100px">Hello</p>
+      <div class="journeybox">
+
+      </div>
+          </div>
+</form>
+
+</main>
+
+{% endblock %}
