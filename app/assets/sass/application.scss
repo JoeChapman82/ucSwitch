@@ -44,5 +44,36 @@ $path: "/public/images/";
   border-color: $light-blue;
   background-color: mix(white, $light-blue, 90%);
 }
-
+.spaceforlink {
+  margin-bottom: 80px
+}
+ul.journey {
+  margin-left: 20px;
+  border-left: 3px solid #458ccc;
+}
+.journey li {
+  list-style: none;
+  margin: 1em 1em 1em -16px;
+  position: relative;
+  top: -10px;
+}
+.journey li::before {
+    content: "";
+    border: 3px solid #458ccc;
+    width: 14px;
+    height: 15px;
+    position: absolute;
+    top: 10px;
+    left: -2.2em;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    zoom: 1;
+    background: white;
+}
+.journey li.done::before {
+  border-width: 10px;
+  width: 0px;
+  height: 0px;
+}
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
