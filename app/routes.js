@@ -13,3 +13,12 @@ router.post('/aboutswitch', function (req, res, next) {
 })
 1
 module.exports = router
+
+
+// add 2017 routes here
+
+router.post('2017/bankaccount', function (req, res, next) {
+  res.render('bankaccount',req.body);
+})
+1
+module.exports = router

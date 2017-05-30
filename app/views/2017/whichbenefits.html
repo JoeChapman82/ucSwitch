@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+About - GOV.UK Prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <form action="/2017/bankaccount" method="POST" class="form">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Which benefits are you getting now?</h1>
+
+      <div class="form-group">
+        <fieldset>
+
+          <legend class="visuallyhidden">Which benefits are you getting now?</legend>
+
+          <label for="benefit_WTC" class="block-label">
+            <input type="checkbox" name="benefit_WTC" value="WTC" id="benefit_WTC">
+            Working Tax Credit
+          </label>
+
+          <label for="benefit_CTC" class="block-label">
+            <input type="checkbox" name="benefit_CTC" value="CTC" id="benefit_CTC">
+            Child Tax Credit
+          </label>
+
+          <label for="benefit_JSA" class="block-label">
+            <input type="checkbox" name="benefit_JSA" value="JSA" id="benefit_JSA">
+            Income-based Jobseeker’s Allowance
+          </label>
+
+          <label for="benefit_ESA" class="block-label">
+            <input type="checkbox" name="benefit_ESA" value="JSA" id="benefit_ESA">
+            Income-related Employment Support 
+          </label>
+
+          <label for="benefit_IS" class="block-label">
+            <input type="checkbox" name="benefit_IS" value="IS" id="benefit_IS">
+            Income Support
+          </label>
+
+          <label for="benefit_HB" class="block-label">
+            <input type="checkbox" name="benefit_HB" value="HB" id="benefit_HB">
+            Housing Benefit
+          </label>
+
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" class="button" value="Continue" id="submitbutton">
+      </div>
+
+    </div>
+  </div>
+</form>
+
+</main>
+
+{% endblock %}
