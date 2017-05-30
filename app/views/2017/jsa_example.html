@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+About - GOV.UK Prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <form action="/2016/aboutswitch.html" method="get" class="form">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">You’ll need to switch to Universal Credit in March 2018</h1>
+      <p class="lede">
+
+      </p>
+
+      <P>Before Universal Credit arrives in your area there are things you can do to prepare and ensure that the Switch goes smoothly.</P>
+
+      <h3 class="heading-medium">Things you definitely need to do before you switch:</h3>
+
+      <form>
+  <fieldset>
+
+    <legend class="visually-hidden">Things you definitely need to do before you switch:</legend>
+
+    <div class="multiple-choice">
+      <input id="need-1" name="needs" type="checkbox" value="waste-animal">
+      <label for="need-1">Get an email address</label>
+    </div>
+
+    <div class="multiple-choice">
+      <input id="waste-type-2" name="needs" type="checkbox" value="waste-mines">
+      <label for="need-2">Get a bank account</label>
+    </div>
+
+
+  </fieldset>
+</form>
+
+      <h3 class="heading-medium">Things you might need to do:</h3>
+
+       <form>
+  <fieldset>
+
+    <legend class="visually-hidden">Things you might need to do before you switch:</legend>
+
+    <div class="multiple-choice">
+      <input id="might-need-1" name="might-need" type="checkbox" value="waste-animal">
+      <label for="might-need-1">Apply for an advance</label>
+    </div>
+
+    <div class="multiple-choice">
+      <input id="might-need-2" name="might-need" type="checkbox" value="waste-mines">
+      <label for="might-need-2">Get budgeting support</label>
+    </div>
+
+
+  </fieldset>
+</form>
+
+      <h3 class="heading-medium">Things you need to know:</h3>
+
+      <ul class="list list-bullet">
+  <li>There will be a payment gap of at least 6 weeks</li>
+  <li>Each individual in your household will need to apply seperatley</li>
+  <li>Your credit will be paid to you in monthly installments</li>
+  <li>Claimant conditionality</li>
+  <li>If you are self employed, you will need to report your earnings every month</li>
+</ul>
+
+
+<!--  <<Stuff from Eddies old prototype>> -->
+ 
+      <!-- <h3 class="heading-medium">What might change when you move to UC</h3>
+      <ul class="list list-bullet"> -->
+        <!-- List dot one and two -->
+        <!-- {% if (benefit_JSA or benefit_ESA or benefit_IS or benefit_HB) %}
+          {% include "includes/responsibilities/1.html" %}
+          {% include "includes/responsibilities/2.html" %}
+          {% include "includes/responsibilities/3.html" %}
+        {% endif %}
+        <!-- List dot four -->
+        <!-- {% if (benefit_WTC or benefit_CTC or benefit_JSA or benefit_ESA or benefit_IS or benefit_HB) %}
+        {% include "includes/responsibilities/4.html" %}
+        {% endif %}
+        <!-- List dot five -->
+        <!-- {% if (benefit_JSA or benefit_ESA or benefit_IS or benefit_HB) %}
+        {% include "includes/responsibilities/5.html" %}
+        {% endif %} -->
+        <!-- List dot six -->
+        <!-- {% if (benefit_WTC or benefit_CTC or benefit_JSA or benefit_ESA or benefit_IS or benefit_HB) %}
+        {% include "includes/responsibilities/6.html" %}
+        {% endif %} -->
+        <!-- List dot seven -->
+        <!-- {% if (benefit_WTC or benefit_CTC or benefit_JSA or benefit_ESA or benefit_IS or benefit_HB) %}
+        {% include "includes/responsibilities/7.html" %}
+        {% endif %} --> <!-- -->
+    <!-- </ul> --> 
+    </div>
+</form>
+
+</main>
+
+{% endblock %}
