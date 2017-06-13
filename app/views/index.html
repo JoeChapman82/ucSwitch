@@ -5,8 +5,35 @@
 {% endblock %}
 
 {% block content %}
+{% import 'ucs1/macros/macros.html' as elements %}
+
+<div class="index-page-banner">
+  <div class="index-heading-wrapper">
+    <h1 class="heading-xlarge index-heading-xlarge">UC - Switch</h1>
+    <h2 class="heading-large index-heading-large">Prototypes</h2>
+  </div>
+</div>
 
 <main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        {# <img src="/public/images/UCSwitch_logo@2x.png" alt="" width="162" height="182"; /> #}
+
+
+      {{ elements.current('1', '13/06/2017', '/ucs1/uc-switch-is-coming', ['None - First release'], ['Awaiting research'], '') }}
+
+    <div class="older-versions">
+      <h3 class="heading-medium index-heading-medium">Older versions</h3>
+        {{ elements.older('2016 Prototype', '2016', '/ucswitchiscoming', ['None - Initial Draft'], ['Awaiting research'], '')}}
+
+
+    </div>
+
+  </div>
+</main>
+
+<!-- <main id="content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
 
@@ -32,7 +59,7 @@
 
     </div>
   </div>
-</main>
+</main> -->
 
 
 {% endblock %}
