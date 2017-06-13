@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+About - GOV.UK Prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+        <form class="" action="benefits" method="post">
+            <h1 class="heading-xlarge form-heading">Which benefits are you getting now?</h1>
+
+                  <div>
+                      <fieldset class="form-group">
+                          <legend>
+                              <span style="display:none;">Which benefits are you getting now?</span>
+                          </legend>
+                          <label class="block-label form-label" for="wtc">Working Tax Credit
+                              <input type="checkbox" id="wtc" name="benefits" value="wtc">
+                          </label>
+                          <label class="block-label form-label" for="ctc">Child Tax Credit
+                              <input type="checkbox" id="ctc" name="benefits" value="ctc">
+                          </label>
+                          <label class="block-label form-label" for="jsa">Income Based Jobseeker's Allowance
+                              <input type="checkbox" id="jsa" name="benefits" value="jsa">
+                          </label>
+                          <label class="block-label form-label" for="esa">Income Related Employment Support Allowance
+                              <input type="checkbox" id="esa" name="benefits" value="esa">
+                          </label>
+                          <label class="block-label form-label" for="is">Income Support
+                              <input type="checkbox" id="is" name="benefits" value="is">
+                          </label>
+                          <label class="block-label form-label" for="hb">Housing Benefit
+                              <input type="checkbox" id="hb" name="benefits" value="hb">
+                          </label>
+
+                          <!-- Hidden field to force benefits field to form an array of answers to shorten logic on outcome page -->
+                          <label class="block-label form-label js-hidden" for="hidden">hidden
+                              <input class="js-hidden" type="checkbox" id="hidden" name="benefits" value="hidden" checked="true">
+                          </label>
+                      </fieldset>
+                  </div>
+
+                  <input class="button" type="submit" name="submit" value="Continue">
+
+    </form>
+    </div>
+  </div>
+
+
+</main>
+
+{% endblock %}

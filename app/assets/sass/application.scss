@@ -87,3 +87,16 @@ ul.journey {
   }
 }
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+label, input {
+    display: block;
+}
+
+.form-heading {
+    margin-bottom: $gutter;
+}
+
+.side-link {
+    margin-left: 1rem;
+    vertical-align: sub;
+}

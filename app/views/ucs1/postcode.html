@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+About - GOV.UK Prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+        <form class="" action="postcode" method="post">
+            <h1 class="heading-xlarge form-heading">Enter your postcode</h1>
+            <p class="lede">Enter the first part of your postcode so we can tell when your area will be switching to Universal Credit</p>
+                <div class="form-group">
+                    <label class="form-label" for="postcode">eg LS1 or YO26
+                    <input class="form-control form-control-1-4" type="text" name="postcode" value="">
+                    </label>
+                </div>
+
+
+      <input class="button" type="submit" name="submit" value="Continue">
+
+
+    </form>
+    </div>
+  </div>
+
+
+</main>
+
+{% endblock %}
