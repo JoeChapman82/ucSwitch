@@ -118,10 +118,12 @@ About - GOV.UK Prototype kit
               <label class="block-label form-label" for="budget">Get budgeting help from <a href="https://www.moneyadviceservice.org/en/tools/budget-planner">Money Advice Service</a>.
                   <input type="checkbox" id="budget" name="canDo" value="email">
               </label>
-              {% if bank.bank === 'no' and email.email === 'no' and adults.adults > 1 and children.children === 'yes' and 'ctc' in benefits.benefits and 'esa' in benefits.benefits %}
+              {% if benefits.benefits %}
+              {% if 'esa' in benefits.benefits %}
               {% include "ucs1/partials/citizens-advice.html" %}
               {% endif %}
-
+              {% endif %}
+              
           </fieldset>
       </div>
 
