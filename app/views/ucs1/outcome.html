@@ -10,16 +10,14 @@ About - GOV.UK Prototype kit
   <div class="grid-row">
     <div class="column-two-thirds">
         <form class="" action="outcome" method="post">
-      <h1 class="heading-xlarge form-heading">Month Year is when you need to apply for Universal Credit</h1>
-      <p class="lede">Before Universal Credit arrives in your area there are things you can do to
-      to prepare and ensure the Switch goes smoothly.</p>
+      <h1 class="heading-xlarge form-heading">July 2019 is when you need to apply for Universal Credit</h1>
 
       <div class="form-group">
           <h2 class="heading-small">Things you need to know:</h2>
           <ul class="list list-bullet">
               <li>you will have to wait for at least 6 weeks before you get your first payment</li>
               <li>you will be paid monthly</li>
-              {% if adults.adults > 0 %}
+              {% if adults.adults > 1 %}
               {% include "ucs1/partials/adults.html" %}
               {% endif %}
 
@@ -29,17 +27,16 @@ About - GOV.UK Prototype kit
               {% endif %}
               {% endfor %}
 
-              {% for item in benefits.benefits %}
-              {% if item === 'wtc' %}
+              {# Self employed info #}
+              {% if 'jsa' in benefits.benefits or 'esa' in benefits.benefits or 'hb' in benefits.benefits or 'is' in benefits.benefits or 'wtc' in benefits.benefits %}
               {% include "ucs1/partials/wtc.html" %}
               {% endif %}
-              {% endfor %}
 
-              {% if 'wtc' in benefits.benefits %}
+              {# {% if 'wtc' in benefits.benefits %}
               {% include "ucs1/partials/tc-overpayments.html" %}
               {% elif 'ctc' in benefits.benefits %}
               {% include "ucs1/partials/tc-overpayments.html" %}
-              {% endif %}
+              {% endif %} #}
 
               {% for item in benefits.benefits %}
               {% if item === 'is' %}
@@ -59,15 +56,16 @@ About - GOV.UK Prototype kit
               {% endif %}
               {% endfor %}
 
-              {% if 'jsa' in benefits.benefits or 'esa' in benefits.benefits or 'hb' in benefits.benefits or 'is' in benefits.benefits %}
-              {% include "ucs1/partials/legacy-overpayments.html" %}
+              {% if 'jsa' in benefits.benefits or 'esa' in benefits.benefits or 'hb' in benefits.benefits or 'is' in benefits.benefits or 'wtc' in benefits.benefits or 'ctc' in benefits.benefits %}
+              {% include "ucs1/partials/overpayments.html" %}
               {% endif %}
 
-              {% for item in benefits.benefits %}
+              {# {% for item in benefits.benefits %}
               {% if item === 'hb' %}
               {% include "ucs1/partials/hb.html" %}
               {% endif %}
-              {% endfor %}
+              {% endfor %} #}
+              <li>you might have to look for ways to earn more money</li>
 
 
 
@@ -75,8 +73,11 @@ About - GOV.UK Prototype kit
 
           </ul>
       </div>
-
+      {# Possibly wont show with hb #}
+      {% if email.email === 'no' or bank.bank === 'no' or children.children === 'yes' %}
       <h2 class="heading-small">Things you need to do before you apply:</h2>
+      {% endif %}
+
       <div>
           <fieldset class="form-group">
               <legend>
@@ -101,7 +102,7 @@ About - GOV.UK Prototype kit
               {% endfor %}
 
               {% if email.email !== 'no' and bank.bank !== 'yes' and children.children !== 'yes' and not 'hb' in benefits.benefits %}
-              none
+              {# none #}
               {% endif %}
 
           </fieldset>
@@ -114,14 +115,18 @@ About - GOV.UK Prototype kit
               <legend>
                   <span style="display:none;">Things you can do before you apply</span>
               </legend>
-              <label class="block-label form-label" for="budget">Get budgeting help <a href="#">here</a>
+              <label class="block-label form-label" for="budget">Get budgeting help from <a href="https://www.moneyadviceservice.org/en/tools/budget-planner">Money Advice Service</a>.
                   <input type="checkbox" id="budget" name="canDo" value="email">
               </label>
+              {% if bank.bank === 'no' and email.email === 'no' and adults.adults > 1 and children.children === 'yes' and 'ctc' in benefits.benefits and 'esa' in benefits.benefits %}
+              {% include "ucs1/partials/citizens-advice.html" %}
+              {% endif %}
+
           </fieldset>
       </div>
 
       <input class="button" type="submit" name="submit" value="Print">
-      <a class="side-link" href="#">Back to Universal Credit Overview</a>
+      <a class="side-link" href="#">Back to Universal Credit overview</a>
 
 
     </form>
