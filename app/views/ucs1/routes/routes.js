@@ -62,6 +62,7 @@ module.exports = function (app) {
     });
 
     app.get('/ucs1/outcome', function(req, res) {
+        if(req.session['ucs1-benefits']) {
         res.render('ucs1/outcome', {
             postcode  : req.session['ucs1-postcode'],
             bank      : req.session['ucs1-bank'],
@@ -70,6 +71,9 @@ module.exports = function (app) {
             children  : req.session['ucs1-children'],
             benefits  : req.session['ucs1-benefits'],
         });
+    } else {
+        res.redirect('/ucs1/uc-switch-is-coming');
+    }
     });
     app.post('/ucs1/outcome', function(req, res) {
         req.session.destroy();
