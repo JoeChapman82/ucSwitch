@@ -20,7 +20,6 @@ module.exports = function (app) {
         res.render('ucs1/bank');
     });
     app.post('/ucs1/bank', function(req, res) {
-        console.log(req.body);
         req.session['ucs1-bank'] = req.body;
         res.redirect('/ucs1/email');
     });
@@ -56,7 +55,6 @@ module.exports = function (app) {
         res.render('ucs1/benefits');
     });
     app.post('/ucs1/benefits', function(req, res) {
-        console.log(req.body);
         req.session['ucs1-benefits'] = req.body;
         res.redirect('/ucs1/outcome');
     });

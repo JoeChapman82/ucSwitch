@@ -78,6 +78,12 @@ About - GOV.UK Prototype kit
       {% if email.email === 'no' or bank.bank === 'no' or children.children === 'yes' %}
       <h2 class="heading-small">Things you need to do before you apply:</h2>
       {% endif %}
+      {% if email.email === 'yes' and bank.bank === 'yes' and children.children === 'no' %}
+      {% if 'hb' in benefits.benefits %}
+      <h2 class="heading-small">Things you need to do before you apply:</h2>
+      {% endif %}
+      {% endif %}
+
 
       <div>
           <fieldset class="form-group">
