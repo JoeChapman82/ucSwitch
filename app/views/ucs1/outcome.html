@@ -21,11 +21,11 @@ About - GOV.UK Prototype kit
               {% include "ucs1/partials/adults.html" %}
               {% endif %}
 
-              {% for item in benefits.benefits %}
+              {# {% for item in benefits.benefits %}
               {% if item === 'ctc' %}
               {% include "ucs1/partials/ctc.html" %}
               {% endif %}
-              {% endfor %}
+              {% endfor %} #}
 
               {# Self employed info #}
               {% if 'jsa' in benefits.benefits or 'esa' in benefits.benefits or 'hb' in benefits.benefits or 'is' in benefits.benefits or 'wtc' in benefits.benefits %}
