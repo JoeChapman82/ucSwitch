@@ -126,7 +126,7 @@ About - GOV.UK Prototype kit
                   <input type="checkbox" id="budget" name="canDo" value="email">
               </label>
               {% if benefits.benefits %}
-              {% if 'esa' in benefits.benefits %}
+              {% if 'esa' in benefits.benefits or 'jsa' in benefits.benefits %}
               {% include "ucs1/partials/citizens-advice.html" %}
               {% endif %}
               {% endif %}
