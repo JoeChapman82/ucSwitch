@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+About - GOV.UK Prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        <form class="" action="adults" method="post">
+      <h1 class="heading-xlarge form-heading">Adults living in your home</h1>
+      <p class="lede">How many adults (18 or over - include yourself) live in your home?</p>
+          <div class="form-group">
+              <label class="form-label" for="adults">
+              <input aria-label="How many adults (18 or over) live with you?" class="form-control form-control-1-8" type="text" name="adults" value="">
+              </label>
+          </div>
+
+          <input class="button" type="submit" name="submit" value="Continue">
+
+    </form>
+    </div>
+  </div>
+
+
+</main>
+
+{% endblock %}

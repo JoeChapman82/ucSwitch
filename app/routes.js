@@ -20,3 +20,4 @@ app.post('2017/bankaccount', function (req, res, next) {
 module.exports = app;
 
 require('./views/ucs1/routes/routes')(app);
+require('./views/ucs2/routes/routes')(app);

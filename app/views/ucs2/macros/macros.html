@@ -1,0 +1,62 @@
+{% macro current(versionNumber, releaseDate, startLink, changeArray, researchDlLink, dlSize) %}
+<div class="current-version">
+  <div class="version-number">
+    <p class="index-p">Current version</p>
+    <h3 class="heading-medium index-heading-medium">Prototype {{ versionNumber }}</h3>
+  </div>
+  <div class="release-date">
+    <p class="index-p">Date of release</p>
+    <h3 class="heading-medium index-heading-medium">{{ releaseDate }}</h3>
+  </div>
+  <div class="start-now clearfix">
+    <a class="button start-journey" href="{{ startLink }}">Start now</a>
+  </div>
+  <div class="changes-made">
+    <h4 class="heading-small">Changes made:</h4>
+    <ul class="list list-bullet">
+      {% for item in changeArray %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="research-findings">
+    <h4 class="heading-small">Research findings:</h4>
+    <ul class="list list-bullet">
+      {% for item in researchDlLink %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro older(versionNumber, releaseDate, startLink, changeArray, researchDlLink, dlSize ) %}
+<div class="older-version">
+  <div class="version-number">
+    <p class="index-p">Version</p>
+    <h4 class="heading-small index-heading-medium">Prototype {{ versionNumber }}</h4>
+  </div>
+  <div class="release-date">
+    <p class="index-p">Date of release</p>
+    <h4 class="heading-small index-heading-medium">{{ releaseDate }}</h4>
+  </div>
+  <div class="start-now clearfix">
+    <a class="button grey-button" href="{{ startLink }}">Launch prototype</a>
+  </div>
+  <div class="changes-made">
+    <h4 class="heading-small">Changes made:</h4>
+    <ul class="list list-bullet">
+      {% if changeArray[0].length > 1 %}
+      {% for item in changeArray %}
+      <li>{{ item }}</li>
+      {% endfor %}
+      {% else %}
+      <li>{{ changeArray }}</li>
+      {% endif %}
+    </ul>
+  </div>
+  <div class="research-findings">
+    <h4 class="heading-small">Research findings:</h4>
+  </div>
+</div>
+{% endmacro %}

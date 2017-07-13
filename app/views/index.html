@@ -20,11 +20,13 @@
 
         {# <img src="/public/images/UCSwitch_logo@2x.png" alt="" width="162" height="182"; /> #}
 
+        {{ elements.current('2', '13/07/2017', '/ucs2/uc-switch-is-coming', ['None - First release'], ['Awaiting research'], '') }}
 
-      {{ elements.current('1', '13/06/2017', '/ucs1/uc-switch-is-coming', ['None - First release'], ['Awaiting research'], '') }}
+      {# {{ elements.current('1', '13/06/2017', '/ucs1/uc-switch-is-coming', ['None - First release'], ['Awaiting research'], '') }} #}
 
     <div class="older-versions">
       <h3 class="heading-medium index-heading-medium">Older versions</h3>
+        {{ elements.older('1', '13/06/2017', '/ucs1/uc-switch-is-coming', ['None - Initial Draft'], ['Awaiting research'], '')}}
         {{ elements.older('2016 Prototype', '2016', '/ucswitchiscoming', ['None - Initial Draft'], ['Awaiting research'], '')}}
 
 

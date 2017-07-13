@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+About - GOV.UK Prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        <form class="" action="outcome" method="post">
+      <h1 class="heading-xlarge form-heading">July 2019 is when you need to apply for Universal Credit</h1>
+
+      <div class="form-group">
+          <h2 class="heading-small">Things you need to know:</h2>
+          <ul class="list list-bullet">
+              <li>you will have to wait for at least 5 weeks before you get your first payment</li>
+              <li>you will be paid monthly</li>
+              {% if adults.adults > 1 %}
+              {% include "ucs2/partials/adults.html" %}
+              {% endif %}
+
+              {# {% for item in benefits.benefits %}
+              {% if item === 'ctc' %}
+              {% include "ucs2/partials/ctc.html" %}
+              {% endif %}
+              {% endfor %} #}
+
+              {# Self employed info #}
+              {% if 'jsa' in benefits.benefits or 'esa' in benefits.benefits or 'hb' in benefits.benefits or 'is' in benefits.benefits or 'wtc' in benefits.benefits %}
+              {% include "ucs2/partials/wtc.html" %}
+              {% endif %}
+
+
+              {# {% if 'wtc' in benefits.benefits %}
+              {% include "ucs2/partials/tc-overpayments.html" %}
+              {% elif 'ctc' in benefits.benefits %}
+              {% include "ucs2/partials/tc-overpayments.html" %}
+              {% endif %} #}
+
+              {% for item in benefits.benefits %}
+              {% if item === 'is' %}
+              {% include "ucs2/partials/is.html" %}
+              {% endif %}
+              {% endfor %}
+
+              {% for item in benefits.benefits %}
+              {% if item === 'esa' %}
+              {% include "ucs2/partials/esa.html" %}
+              {% endif %}
+              {% endfor %}
+
+              {% for item in benefits.benefits %}
+              {% if item === 'jsa' %}
+              {% include "ucs2/partials/jsa.html" %}
+              {% endif %}
+              {% endfor %}
+
+              {% if 'jsa' in benefits.benefits or 'esa' in benefits.benefits or 'hb' in benefits.benefits or 'is' in benefits.benefits or 'wtc' in benefits.benefits or 'ctc' in benefits.benefits %}
+              {% include "ucs2/partials/overpayments.html" %}
+              {% endif %}
+
+              {# {% for item in benefits.benefits %}
+              {% if item === 'hb' %}
+              {% include "ucs2/partials/hb.html" %}
+              {% endif %}
+              {% endfor %} #}
+              <li>you might have to look for ways to earn more money</li>
+
+
+
+
+
+          </ul>
+      </div>
+      {# Possibly wont show with hb #}
+      {% if email.email === 'no' or bank.bank === 'no' or children.children === 'yes' %}
+      <h2 class="heading-small">Things you need to do before you apply:</h2>
+      {% endif %}
+      {% if email.email === 'yes' and bank.bank === 'yes' and children.children === 'no' %}
+      {% if 'hb' in benefits.benefits %}
+      <h2 class="heading-small">Things you need to do before you apply:</h2>
+      {% endif %}
+      {% endif %}
+
+
+      <div>
+          <fieldset class="form-group">
+              <legend>
+                  <span style="display:none;">Things you need to do before you apply</span>
+              </legend>
+              {% if email.email === 'no' %}
+              {% include "ucs2/partials/email.html" %}
+              {% endif %}
+
+              {% if bank.bank === 'no' %}
+              {% include "ucs2/partials/bank.html" %}
+              {% endif %}
+
+              {% if children.children === 'yes' %}
+              {% include "ucs2/partials/children.html" %}
+              {% endif %}
+
+              {% for item in benefits.benefits %}
+              {% if item === 'hb' %}
+              {% include "ucs2/partials/hb2.html" %}
+              {% endif %}
+              {% endfor %}
+
+              {% if email.email !== 'no' and bank.bank !== 'yes' and children.children !== 'yes' and not 'hb' in benefits.benefits %}
+              {# none #}
+              {% endif %}
+
+          </fieldset>
+      </div>
+
+
+      <h2 class="heading-small">Things you can do before you apply:</h2>
+      <div>
+          <fieldset class="form-group">
+              <legend>
+                  <span style="display:none;">Things you can do before you apply</span>
+              </legend>
+              <label class="block-label form-label" for="budget">Get budgeting help from <a href="https://www.moneyadviceservice.org/en/tools/budget-planner">Money Advice Service</a>.
+                  <input type="checkbox" id="budget" name="canDo" value="email">
+              </label>
+              {% if benefits.benefits %}
+              {% include "ucs2/partials/citizens-advice.html" %}
+              {% endif %}
+
+          </fieldset>
+      </div>
+
+      <input class="button" type="submit" name="submit" value="Print">
+      <a class="side-link" href="#">Back to Universal Credit overview</a>
+
+
+    </form>
+    </div>
+  </div>
+
+
+</main>
+
+{% endblock %}
