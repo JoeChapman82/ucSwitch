@@ -15,8 +15,10 @@ About - GOV.UK Prototype kit
       <div class="form-group">
           <h2 class="heading-small">Things you need to know:</h2>
           <ul class="list list-bullet">
-              <li>you will have to wait for at least 5 weeks before you get your first payment</li>
-              <li>you will be paid monthly</li>
+              <li>you'll get your first payment 5 weeks after you apply for Universal Credit</li>
+              <li>if your circumstances stay the same, you should get the same amount of money as you were getting on your old benefits</li>
+              <li>if your allowance on Universal Credit works out less than what you were getting on your old benefits, it'll be 'topped up' - this is called transitional protection</li>
+              <li>you'll be paid monthly</li>
               {% if adults.adults > 1 %}
               {% include "ucs2/partials/adults.html" %}
               {% endif %}
@@ -66,7 +68,7 @@ About - GOV.UK Prototype kit
               {% include "ucs2/partials/hb.html" %}
               {% endif %}
               {% endfor %} #}
-              <li>you might have to look for ways to earn more money</li>
+              <li>you might have to look for ways to earn more money - but only if you’re earning less than the earnings threshold (what you’d earn if you worked for 35 hours a week at the National Minimum Wage)</li> <li>if you’re responsible for caring for someone this threshold is likely to be lower</li>
 
 
 
@@ -122,6 +124,9 @@ About - GOV.UK Prototype kit
               <legend>
                   <span style="display:none;">Things you can do before you apply</span>
               </legend>
+              <label class="block-label form-label" for="advance">Apply for an advance payment if you think you won't manage in the 5 weeks before your payment - apply as early as possible. You’ll have to pay this back.
+                  <input type="checkbox" id="budget" name="canDo" value="email">
+              </label>
               <label class="block-label form-label" for="budget">Get budgeting help from <a href="https://www.moneyadviceservice.org/en/tools/budget-planner">Money Advice Service</a>.
                   <input type="checkbox" id="budget" name="canDo" value="email">
               </label>
